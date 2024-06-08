@@ -97,7 +97,7 @@ flex-wrap: wrap;
   }
 
   .forecast{
-    margin:10px;
+    margin:auto;
     background-color: navy;
     color:white;
     padding:20px;
@@ -108,3 +108,7 @@ margin: 5% 0 5% 0;
 
 }
 
+.today{
+    margin: 20px;
+    border:3px solid black;
+}
