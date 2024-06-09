@@ -85,16 +85,16 @@ searchSubmitButton.addEventListener("click", async (event) => {
   const dayFiveWindValue = dayFiveWindOutput.value;
   const dayFiveIconValue = dayFiveIconOutput.value;
 
-  let isError = false;
+//   let isError = false;
 
-  if (cityInputValue.trim() === "" || !cityInputValue) {
-    console.log("city name+++++", cityInputValue);
-    displayMessage("error", "Exercise cannot be blank");
-    isError = true;
-  } else {
-    displayMessage("success", "Submitted successfully");
-  }
-  if (!isError) {
+//   if (cityInputValue.trim() === "" || !cityInputValue) {
+//     console.log("city name+++++", cityInputValue);
+//     displayMessage("error", "Exercise cannot be blank");
+//     isError = true;
+//   } else {
+//     displayMessage("success", "Submitted successfully");
+//   }
+//   if (!isError) {
     const weeklyForecast = {
       citySubmit: cityInputValue,
       dttm: new Date(),
@@ -172,7 +172,7 @@ searchSubmitButton.addEventListener("click", async (event) => {
     dayFiveTempOutput.innerText = `Temperature: ${dayFiveTempValue}°F`;
     dayFiveWindOutput.innerText = `Wind: ${dayFiveWindValue} MPH`;
     dayFiveHumidityOutput.innerText = `Humidity: ${dayFiveHumidityValue}%`;
-  }
+  
 });
 // end search submit button
 
