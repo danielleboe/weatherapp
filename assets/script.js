@@ -25,7 +25,7 @@ function displayMessage(type, message) {
 
 searchSubmitButton.addEventListener("click", async (event) => {
   event.preventDefault();
-  await logTemp();
+  await logDaily();
   const todayDateValue = dayjs(todayDateAPI.value).format("MM/DD/YYYY");
   const cityInputValue = cityInput.value;
   const todayTempValue = todayTempOutput.value;
@@ -60,7 +60,9 @@ searchSubmitButton.addEventListener("click", async (event) => {
 
     cityName.innerText = `${cityInputValue}`;
     todayDateAPI.innerText = `${todayDateValue}`;
-    document.getElementById("today-icon").src = `https://openweathermap.org/img/wn/${todayIconValue}@2x.png`;
+    document.getElementById(
+      "today-icon"
+    ).src = `https://openweathermap.org/img/wn/${todayIconValue}@2x.png`;
     todayTempOutput.innerText = `Temperature: ${todayTempValue}°F`;
     todayWindOutput.innerText = `Wind: ${todayWindValue} MPH`;
     todayHumidityOutput.innerText = `Humidity: ${todayHumidityValue}%`;
@@ -68,11 +70,11 @@ searchSubmitButton.addEventListener("click", async (event) => {
 });
 // end search submit button
 
-async function logTemp() {
+async function logDaily() {
   try {
     //fetch daily weather data
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput.value}&cnt=1&appid=0aaf60db609b5ed9230d4d741d6c3bfb`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput.value}&cnt=1&appid=0aaf60db609b5ed9230d4d741d6c3bfb&units=imperial`
     );
 
     if (!response.ok) {
@@ -85,7 +87,7 @@ async function logTemp() {
     //Today's Date
     if (data.list && data.list.length > 0 && data.list[0].dt) {
       const todayDateValue = data.list[0].dt;
-      const todayDateConverted = dayjs(todayDateAPI.value).format("MM/DD/YYYY");
+      const todayDateConverted = dayjs.unix(todayDateValue).format("MM/DD/YYYY");
       // todayDateAPI.value = todayDateValue; // Display the humidity
       console.log(`Date: ${todayDateConverted}`);
     } else {
@@ -93,7 +95,12 @@ async function logTemp() {
     }
 
     //Today's Icon
-    if (data.list && data.list.length > 0 && data.list[0].weather && data.list[0].weather.length > 0) {
+    if (
+      data.list &&
+      data.list.length > 0 &&
+      data.list[0].weather &&
+      data.list[0].weather.length > 0
+    ) {
       const todayIcon = data.list[0].weather[0].icon; // Accessing the first element in the weather array
       todayIconOutput.value = todayIcon; // Display the humidity
       console.log(`Today Icon: ${todayIcon}`);
@@ -103,10 +110,9 @@ async function logTemp() {
 
     //Today's temp//
     if (data.list && data.list.length > 0 && data.list[0].main) {
-      const kelvinTemp = data.list[0].main.temp;
-      const fahrenheitTemp = kelvinToFahrenheit(kelvinTemp);
-      todayTempOutput.value = fahrenheitTemp.toFixed(2); // Display the temp value in Fahrenheit
-      console.log(`Today fahrenheitTemp: ${fahrenheitTemp}°F`);
+      const fahrenheitTemp = data.list[0].main.temp;
+      todayTempOutput.value = fahrenheitTemp; // Display the humidity
+      console.log(`Today Humidity: ${fahrenheitTemp}%`);
     } else {
       todayTempOutput.value = "No data found"; // Handle case where no items are found
     }
@@ -132,7 +138,7 @@ async function logTemp() {
     console.error("Error fetching weather data:", error);
 
     todayDateAPI.value = "Error fetching date data"; // Display error message in the field
-    todayIconOutput.value =  "Error fetching icon data"; // Display error message in the field
+    todayIconOutput.value = "Error fetching icon data"; // Display error message in the field
     todayTempOutput.value = "Error fetching daily temperature data"; // Display error message in the field
     todayHumidityOutput.value = "Error fetching daily humidity data"; // Display error message in the field
     todayWindOutput.value = "Error fetching daily wind data"; // Display error message in the field
@@ -140,9 +146,9 @@ async function logTemp() {
   ////////
 }
 // Function to convert Kelvin to Fahrenheit
-function kelvinToFahrenheit(kelvin) {
-  return ((kelvin - 273.15) * 9) / 5 + 32;
-}
+// function kelvinToFahrenheit(kelvin) {
+//   return ((kelvin - 273.15) * 9) / 5 + 32;
+// }
 
 // const dailyTempHTML = document.createElement("div");
 // const dailyHumidityHTML = document.createElement("div");
