@@ -191,8 +191,8 @@ function handleError() {
 }
 
 function generateSearchId() {
-    return crypto.randomUUID();
-  }
+  return Math.floor(Math.random() * Date.now());
+}
 
 function updateForecastUI() {
   // Update the UI with the forecast data from localStorage or directly from the response
