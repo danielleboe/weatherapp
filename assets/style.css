@@ -1,114 +1,130 @@
-body{
-    font-family: Helvetica, Arial, sans-serif;
+body {
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    text-align: center;
-   
-    
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+}
 
-  /* li{
+/* li{
     text-decoration: none;
     list-style-type: none;
   } */
 
-  main {
-    background-color: blue;
-    color:white;
-    margin: 0;
-    border: 0px;
-    padding: 5px;
-    width:100%;
-  }
-
-
-  /* The side navigation menu */
-.sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-  }
-  
-  /* Sidebar links */
-  .sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-  }
-  
-  /* Active/current link */
-  .sidebar a.active {
-    background-color: #7393B3;
-    color: white;
-  }
-  
-  /* Links on mouse-over */
-  .sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-  }
-  
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-  div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
-  }
-  
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  }
-  
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-  }
-
-/* .content{
-    display:flex;
-flex-direction:row;
-/* flex-wrap: wrap; */
- 
-
-  .forecast-container{
-    display:flex;
-    flex-direction:row;
-flex-wrap: wrap;
-  }
-
-  .forecast{
-    margin:auto;
-    background-color: navy;
-    color:white;
-    padding:20px;
-  }
-
-.search{
-margin: 5% 0 5% 0;
-
+main {
+  background-color: blue;
+  color: white;
+  margin: 0;
+  border: 0px;
+  padding: 5px;
+  width: 100%;
 }
 
-.today{
-    margin: 20px;
-    border:3px solid black;
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: absolute;
+  height: auto;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: flex;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #7393b3;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  margin-bottom: 50px;
+  padding: 1px 16px;
+  height: auto;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content, div.forecast-container, div.forecast-header {
+    margin-left: 0;
+    width: 100%;
+    height:auto;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.forecast-container {
+  /* position: fixed; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: auto;
+}
+
+.forecast {
+  display: inline-block;
+  margin: 1%;
+  background-color: navy;
+  color: white;
+  padding: 20px;
+}
+
+.forecast-header {
+  /* position: fixed; */
+  display: block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 200px;
+  color: black;
+  padding: 1px 16px;
+  height: auto;
+}
+
+.search {
+  margin: 5% 0 5% 0;
+}
+
+.today {
+  margin: 20px;
+  border: 3px solid black;
+}
+
+.icon-image {
+  height:10%;
 }
