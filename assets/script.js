@@ -74,7 +74,6 @@ searchSubmitButton.addEventListener("click", async (event) => {
     let dailyWeather = JSON.parse(localStorage.getItem("dailyWeather")) || [];
     dailyWeather.push(dailyForecast);
     localStorage.setItem("dailyWeather", JSON.stringify(dailyWeather));
-
     cityName.innerText = `${cityInputValue}`;
     todayDateAPI.innerText = `${todayDateValue}`;
     document.getElementById(
@@ -127,13 +126,13 @@ async function logDaily() {
 
   } catch (error) {
     console.error("Error fetching weather data:", error);
-
     todayDateAPI.innerText = "Error fetching date data";
     todayIconOutput.src = "";
     todayTempOutput.innerText = "Error fetching temperature data";
     todayHumidityOutput.innerText = "Error fetching humidity data";
     todayWindOutput.innerText = "Error fetching wind data";
   }
+
 }
 
 // Display search history on page load
