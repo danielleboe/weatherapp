@@ -152,3 +152,8 @@ text-align: center;
 #search-box{
 text-align: center;
 }
+
+#msg{
+margin:5px;
+text-align: center;
+}
