@@ -1,3 +1,10 @@
+// import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js';
+// import utc from 'https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js';
+// import timezone from 'https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js';
+// dayjs.extend(utc);
+// dayjs.extend(timezone);
+
+
 const cityInput = document.querySelector("#search");
 const searchSubmitButton = document.querySelector("#submit");
 const todayTempOutput = document.getElementById("today-temp");
@@ -45,11 +52,13 @@ searchSubmitButton.addEventListener("click", async (event) => {
   event.preventDefault();
   await logDaily();
   const todayDateValue = dayjs(todayDateAPI.innerText).format("MM/DD/YYYY");
+
   const cityInputValue = cityInput.value;
   const todayTempValue = todayTempOutput.innerText;
   const todayHumidityValue = todayHumidityOutput.innerText;
   const todayWindValue = todayWindOutput.innerText;
   const todayIconValue = todayIconOutput.src.split("/").pop().split("@")[0];
+  // const todayIconValue = todayIconOutput.value;
 
   let isError = false;
 
@@ -87,6 +96,8 @@ searchSubmitButton.addEventListener("click", async (event) => {
     saveSearchHistory(cityInputValue);
     displaySearchHistory();
   }
+
+  cityInput.value = "";
 });
 // end search submit button
 
@@ -103,8 +114,9 @@ async function logDaily() {
     const data = await response.json();
     console.log(data);
 
-    const todayDateValue = data.dt;
-    const todayDateConverted = dayjs.unix(todayDateValue).format("MM/DD/YYYY");
+    const todayDateValue = data.dt_txt;
+
+    const todayDateConverted = dayjs(todayDateValue).format("MM/DD/YYYY");
     todayDateAPI.innerText = todayDateConverted;
     console.log(`Date: ${todayDateConverted}`);
 
