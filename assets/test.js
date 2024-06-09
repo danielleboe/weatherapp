@@ -61,6 +61,9 @@ searchSubmitButton.addEventListener("click", async (event) => {
     todayWindOutput.innerText = `Wind: ${todayWindValue} MPH`;
     todayHumidityOutput.innerText = `Humidity: ${todayHumidityValue}%`;
 
+    // Uncomment these lines if you want to enable search history
+    // saveSearchHistory(cityInputValue);
+    // displaySearchHistory();
   }
 });
 
@@ -107,3 +110,6 @@ async function logDaily() {
     todayWindOutput.textContent = "Error fetching wind data";
   }
 }
+
+// Uncomment these lines if you want to enable search history
+// displaySearchHistory();
