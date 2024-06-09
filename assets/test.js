@@ -110,6 +110,3 @@ async function logDaily() {
     todayWindOutput.textContent = "Error fetching wind data";
   }
 }
-
-// Uncomment these lines if you want to enable search history
-// displaySearchHistory();

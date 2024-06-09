@@ -23,6 +23,8 @@ function displayMessage(type, message) {
 searchSubmitButton.addEventListener("click", async (event) => {
   event.preventDefault();
   await logDaily();
+
+  const todayDateConverted = dayjs.unix(todayDateAPI.value).format("MM/DD/YYYY");
   const cityInputValue = cityInput.value;
   const todayDateConverted = todayDateAPI.textContent;
   const todayTempValue = todayTempOutput.textContent.split(': ')[1];
@@ -33,6 +35,7 @@ searchSubmitButton.addEventListener("click", async (event) => {
   let isError = false;
 
   if (cityInputValue.trim() === "" || !cityInputValue) {
+    console.log("city name+++++", cityInputValue);
     displayMessage("error", "City cannot be blank");
     isError = true;
   } else {
@@ -54,13 +57,11 @@ searchSubmitButton.addEventListener("click", async (event) => {
     let dailyWeather = JSON.parse(localStorage.getItem("dailyWeather")) || [];
     dailyWeather.push(dailyForecast);
     localStorage.setItem("dailyWeather", JSON.stringify(dailyWeather));
-
     cityName.innerText = `${cityInputValue}`;
     todayDateAPI.innerText = `${todayDateConverted}`;
     todayTempOutput.innerText = `Temperature: ${todayTempValue}°F`;
     todayWindOutput.innerText = `Wind: ${todayWindValue} MPH`;
     todayHumidityOutput.innerText = `Humidity: ${todayHumidityValue}%`;
-
   }
 });
 
@@ -99,7 +100,6 @@ async function logDaily() {
 
   } catch (error) {
     console.error("Error fetching weather data:", error);
-
     todayDateAPI.textContent = "Error fetching date data";
     todayIconOutput.src = "";
     todayTempOutput.textContent = "Error fetching temperature data";
