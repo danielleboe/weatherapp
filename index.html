@@ -16,18 +16,21 @@
       </ul>
     </main>
     <div class="sidebar">
-      <div><h3 id="subhead">Search for a City</h3></div>
+      <div><h3 id="subhead">Search For A City</h3></div>
       <div id="search-box"><input type="text" class="search" id="search" placeholder="Search.." /></div>
             <div id="msg"></div>
       <button><a href="#search" id="submit">Search</a></button>
-      <a class="search-history" href="#new">Atlanta</a>
+      <div id="search-history-container">
+        <h3>Search History</h3>
+        <ul id="search-history"></ul>
+      </div>
     </div>
     <div id="container" class="container">
     <div class="content">
       <div id="today-forecast"><h1>Today's Forecast</h1></div>
       <div id="city-name"></div> 
       <div id="today"></div>
-      <div><img id="today-icon" style="width:40px;"></div>
+      <div><img id="today-icon" style="width:50px;"></div>
       <div id="today-temp"></div>
       <div id="today-humidity"></div>
       <div id="today-wind"></div>
