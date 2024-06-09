@@ -1,7 +1,3 @@
-// Element selectors for both city input and results
-// const cityInput = document.querySelector("#search");
-// const searchSubmitButton = document.querySelector("#submit");
-
 // Element selectors for day one
 const dayOneDateAPI = document.getElementById("dayone-date");
 const dayOneIconOutput = document.getElementById("dayone-icon");
@@ -195,6 +191,4 @@ function generateSearchId() {
   }
 
 function updateForecastUI() {
-  // Update the UI with the forecast data from localStorage or directly from the response
-  // This function should be implemented based on your specific UI requirements
 }
