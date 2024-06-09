@@ -33,10 +33,10 @@ searchSubmitButton.addEventListener("click", async (event) => {
 
   if (cityInputValue.trim() === "" || !cityInputValue) {
     console.log("city name+++++", cityInputValue);
-    displayMessage("error", "Exercise cannot be blank");
+    displayMessage("error", "City cannot be blank");
     isError = true;
   } else {
-    displayMessage("success", "Submitted successfully");
+    displayMessage("success", "");
   }
   if (!isError) {
     const dailyForecast = {

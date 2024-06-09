@@ -33,14 +33,23 @@ main {
   position: absolute;
   height: auto;
   overflow: auto;
+  font-size: 13px;
 }
 
 /* Sidebar links */
 .sidebar a {
   display: flex;
   color: black;
-  padding: 16px;
+  padding: 13px;
   text-decoration: none;
+}
+
+.sidebar h3 {
+  display: flex;
+  color: black;
+  padding-left: 13px;
+  text-decoration: none;
+  text-align: center;
 }
 
 /* Active/current link */
@@ -127,4 +136,19 @@ div.content {
 
 .icon-image {
   height:10%;
+}
+
+button{
+background-color:green;
+border:0px;
+width: 100%;
+}
+
+#subhead{
+margin:10px 0 0 0px;
+text-align: center;
+}
+
+#search-box{
+text-align: center;
 }

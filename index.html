@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="./assets/style.css" />
-    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon" /> -->
   </head>
   <body>
     <main>
@@ -17,25 +16,18 @@
       </ul>
     </main>
     <div class="sidebar">
-      <div id="msg"></div>
-        <p>Search for a City</p>
-      <a><input type="text" class="search" id="search" placeholder="Search.." /></a>
-      <a href="#search" class="active" id="submit">Search</a>
-      <a href="#new">Atlanta</a>
-      <a href="#contact">Denver</a>
-      <a href="#about">Seattle</a>
-      <a href="#about">San Francisco</a>
-      <a href="#about">Orlando</a>
-      <a href="#about">New York</a>
-      <a href="#about">Chicago</a>
-      <a href="#austin">Austin</a>
+      <div><h3 id="subhead">Search for a City</h3></div>
+      <div id="search-box"><input type="text" class="search" id="search" placeholder="Search.." /></div>
+            <div id="msg"></div>
+      <button><a href="#search" id="submit">Search</a></button>
+      <a class="search-history" href="#new">Atlanta</a>
     </div>
     <div id="container" class="container">
     <div class="content">
       <div id="today-forecast"><h1>Today's Forecast</h1></div>
       <div id="city-name"></div> 
       <div id="today"></div>
-      <div ><img id="today-icon" alt="today icon" style="width:40px;"></div>
+      <div><img id="today-icon" style="width:40px;"></div>
       <div id="today-temp"></div>
       <div id="today-humidity"></div>
       <div id="today-wind"></div>
