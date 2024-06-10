@@ -1,10 +1,3 @@
-// import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js';
-// import utc from 'https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js';
-// import timezone from 'https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js';
-// dayjs.extend(utc);
-// dayjs.extend(timezone);
-
-
 const cityInput = document.querySelector("#search");
 const searchSubmitButton = document.querySelector("#submit");
 const todayTempOutput = document.getElementById("today-temp");
@@ -83,14 +76,14 @@ searchSubmitButton.addEventListener("click", async (event) => {
     let dailyWeather = JSON.parse(localStorage.getItem("dailyWeather")) || [];
     dailyWeather.push(dailyForecast);
     localStorage.setItem("dailyWeather", JSON.stringify(dailyWeather));
-    cityName.innerText = `${cityInputValue}`;
-    todayDateAPI.innerText = `${todayDateValue}`;
-    document.getElementById(
-      "today-icon"
-    ).src = `https://openweathermap.org/img/wn/${todayIconValue}@2x.png`;
-    todayTempOutput.innerText = `Temperature: ${todayTempValue}°F`;
-    todayWindOutput.innerText = `Wind: ${todayWindValue} MPH`;
-    todayHumidityOutput.innerText = `Humidity: ${todayHumidityValue}%`;
+    // cityName.innerText = `${cityInputValue}`;
+    // todayDateAPI.innerText = `${todayDateValue}`;
+    // document.getElementById(
+    //   "today-icon"
+    // ).src = `https://openweathermap.org/img/wn/${todayIconValue}@2x.png`;
+    // todayTempOutput.innerText = `Temperature: ${todayTempValue}°F`;
+    // todayWindOutput.innerText = `Wind: ${todayWindValue} MPH`;
+    // todayHumidityOutput.innerText = `Humidity: ${todayHumidityValue}%`;
 
     // Save search to history
     saveSearchHistory(cityInputValue);

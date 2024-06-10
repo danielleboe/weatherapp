@@ -1,5 +1,18 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: navy;
+  color: white;
+  margin: 0;
+  padding: 5px;
+  width: 100vw;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 ul {
@@ -10,22 +23,8 @@ ul {
   text-align: center;
 }
 
-/* li{
-    text-decoration: none;
-    list-style-type: none;
-  } */
-
-main {
-  background-color: blue;
-  color: white;
-  margin: 0;
-  border: 0px;
-  padding: 5px;
-  width: 100%;
-}
-
-/* The side navigation menu */
 .sidebar {
+  flex: 1 1 200px;
   margin: 0;
   padding: 0;
   width: 200px;
@@ -48,7 +47,6 @@ main {
   display: flex;
   color: black;
   padding-left: 13px;
-  text-decoration: none;
   text-align: center;
 }
 
@@ -58,13 +56,7 @@ main {
   color: white;
 }
 
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+/* Page content */
 div.content {
   margin-left: 200px;
   margin-bottom: 50px;
@@ -79,14 +71,20 @@ div.content {
     height: auto;
     position: relative;
   }
-  .sidebar a {
-    float: left;
-  }
-  div.content, div.forecast-container, div.forecast-header {
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+
+
+  div.content,
+  div.forecast-container,
+  div.forecast-header {
     margin-left: 0;
     width: 100%;
-    height:auto;
+    height: auto;
+    /* display: flex; */
   }
+
+
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
@@ -97,13 +95,85 @@ div.content {
   }
 }
 
+
+/* On screens that are less than 700px wide */
+/* @media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto; */
+    /* position: relative; */
+  /* }
+  .sidebar a {
+    float: left;
+  }
+  div.content,
+  div.forecast-container,
+  div.forecast-header {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+} */
+
+/* On screens that are less than 400px */
+/* @media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+} */
+
+.icon-image {
+  height: 10%;
+}
+
+#subhead {
+  margin: 10px 0 0 0px;
+  text-align: center;
+}
+
+.search {
+  margin: 5% 0 5% 0;
+}
+
+#search-box {
+  text-align: center;
+}
+
+.search-line {
+  font-size: 15px;
+  margin: 13px;
+}
+
+#msg {
+  margin: 5px;
+  text-align: center;
+}
+
+#button-container{
+  text-align: center;
+  justify-content: center;
+}
+
+button {
+  background-color: lightblue;
+  color: black;
+  padding: 5px;
+  border: 0px;
+  width: 60%;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+}
+
 .forecast-container {
-  /* position: fixed; */
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 200px;
   padding: 1px 16px;
   height: auto;
+  font-size: 13px;;
 }
 
 .forecast {
@@ -125,40 +195,7 @@ div.content {
   height: auto;
 }
 
-.search {
-  margin: 5% 0 5% 0;
-}
-
 .today {
   margin: 20px;
   border: 3px solid black;
-}
-
-.icon-image {
-  height:10%;
-}
-
-button{
-background-color:green;
-border:0px;
-width: 100%;
-}
-
-#subhead{
-margin:10px 0 0 0px;
-text-align: center;
-}
-
-#search-box{
-text-align: center;
-}
-
-#msg{
-margin:5px;
-text-align: center;
-}
-
-.search-line{
-font-size: 15px;
-margin:13px;
 }

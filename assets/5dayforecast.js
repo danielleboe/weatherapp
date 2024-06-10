@@ -143,10 +143,11 @@ async function logWeekly() {
 function filterDailyForecasts(forecasts) {
   const dailyForecasts = [];
   const seenDates = new Set();
+  const today = dayjs().format("YYYY-MM-DD");
 
   for (const forecast of forecasts) {
     const date = dayjs.unix(forecast.dt).format("YYYY-MM-DD");
-    if (!seenDates.has(date)) {
+    if (date !== today && !seenDates.has(date)) {
       seenDates.add(date);
       dailyForecasts.push(forecast);
     }
@@ -187,8 +188,10 @@ function handleError() {
 }
 
 function generateSearchId() {
-    return crypto.randomUUID();
-  }
+  return Math.floor(Math.random() * Date.now());
+}
 
 function updateForecastUI() {
+  // Update the UI with the forecast data from localStorage or directly from the response
+  // This function should be implemented based on your specific UI requirements
 }
