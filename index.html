@@ -8,18 +8,15 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <main>
-      <ul>
-        <li>
+    <header>
           <h1>Weather Dashboard</h1>
-        </li>
-      </ul>
-    </main>
+    </header>
     <div class="sidebar">
       <div><h3 id="subhead">Search For A City</h3></div>
       <div id="search-box"><input type="text" class="search" id="search" placeholder="Search.." /></div>
             <div id="msg"></div>
-      <button><a href="#search" id="submit">Search</a></button>
+            <div id="button-container">
+      <button id="submit">Search</button></div>
       <div id="search-history-container">
         <h3>Search History</h3>
         <ul id="search-history"></ul>
@@ -30,7 +27,7 @@
       <div id="today-forecast"><h1>Today's Forecast</h1></div>
       <div id="city-name"></div> 
       <div id="today"></div>
-      <div><img id="today-icon" style="width:50px;"></div>
+      <div><img id="today-icon" style="width:40px;"></div>
       <div id="today-temp"></div>
       <div id="today-humidity"></div>
       <div id="today-wind"></div>
@@ -39,35 +36,35 @@
       <div class="forecast-container">
         <div class="forecast" id="dayone-forecast">
           <div class="date" id="dayone-date">Day 1</div>
-          <div class="icon"><img class="icon-image" id="dayone-icon" style="width:50%;"></div>
+          <div class="icon"><img class="icon-image" id="dayone-icon" style="width:40%;"></div>
           <div class="temp" id="dayone-temp">Temp:</div>
           <div class="wind" id="dayone-wind">Wind:</div>
           <div class="humidity" id="dayone-humidity">Humidity:</div>
         </div>
         <div class="forecast" id="daytwo-forecast">
           <div class="date" id="daytwo-date">Day 2</div>
-          <div class="icon"><img class="icon-image" id="daytwo-icon" style="width:50%;"></div>
+          <div class="icon"><img class="icon-image" id="daytwo-icon" style="width:40%;"></div>
           <div class="temp" id="daytwo-temp">Temp:</div>
           <div class="wind" id="daytwo-wind">Wind:</div>
           <div class="humidity" id="daytwo-humidity">Humidity:</div>
         </div>
         <div class="forecast" id="daythree-forecast">
           <div class="date" id="daythree-date">Day 3</div>
-          <div class="icon"><img class="icon-image" id="daythree-icon" style="width:50%;"></div>
+          <div class="icon"><img class="icon-image" id="daythree-icon" style="width:40%;"></div>
           <div class="temp" id="daythree-temp">Temp:</div>
           <div class="wind" id="daythree-wind">Wind:</div>
           <div class="humidity" id="daythree-humidity">Humidity:</div>
         </div>
         <div class="forecast" id="dayfour-forecast">
           <div class="date" id="dayfour-date">Day 4</div>
-          <div class="icon"><img class="icon-image" id="dayfour-icon" style="width:50%;"></div>
+          <div class="icon"><img class="icon-image" id="dayfour-icon" style="width:40%;"></div>
           <div class="temp" id="dayfour-temp">Temp:</div>
           <div class="wind" id="dayfour-wind">Wind:</div>
           <div class="humidity" id="dayfour-humidity">Humidity:</div>
         </div>
         <div class="forecast" id="dayfive-forecast">
           <div class="date" id="dayfive-date">Day 5</div>
-          <div class="icon"><img class="icon-image" id="dayfive-icon" style="width:50%;"></div>
+          <div class="icon"><img class="icon-image" id="dayfive-icon" style="width:40%;"></div>
           <div class="temp" id="dayfive-temp">Temp:</div>
           <div class="wind" id="dayfive-wind">Wind:</div>
           <div class="humidity" id="dayfive-humidity">Humidity:</div>
